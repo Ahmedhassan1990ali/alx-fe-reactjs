@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/Header';
+import UserProfile from './components/UserProfile';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 
@@ -28,6 +29,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
