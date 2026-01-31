@@ -1,4 +1,5 @@
   import { useState } from 'react';
+  import { Link } from 'react-router-dom';
   import { useRecipeStore } from './recipeStore';
 
   const AddRecipeForm = () => {
@@ -14,6 +15,7 @@
     };
 
     return (
+      <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -28,6 +30,9 @@
         />
         <button type="submit">Add Recipe</button>
       </form>
+      <br />
+      <Link to="/">Back to recipes</Link>
+      </div>
     );
   };
 
