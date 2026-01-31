@@ -12,13 +12,7 @@ const RecipeDetails = () => {
   );
 
   if (!recipe) {
-    return (
-    <>
-      <div>Recipe not found</div>
-      <br />
-      <Link to="/">Back to all recipes</Link>
-    </>
-    );
+    return <div>Recipe not found</div>;
   }
 
   return (
