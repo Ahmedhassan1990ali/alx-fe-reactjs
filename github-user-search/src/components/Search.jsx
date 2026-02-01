@@ -3,6 +3,7 @@ import { fetchUserData } from '../services/githubService';
 
 function Search() {
   const [username, setUsername] = useState('');
+  const [location, setLocation] = useState('');
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -24,6 +25,13 @@ function Search() {
     }
   };
 
+  const userDetails = userData ? [
+    { label: 'Name', value: userData.name || userData.login },
+    { label: 'Bio', value: userData.bio },
+    { label: 'Followers', value: userData.followers },
+    { label: 'Following', value: userData.following },
+  ] : [];
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -33,16 +41,22 @@ function Search() {
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Enter GitHub username"
         />
+        
+        <input
+          type="text"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          placeholder="Filter by location (optional)"
+          style={{ marginLeft: '10px' }}
+        />
+        
         <button type="submit">Search</button>
       </form>
 
-      {/* Loading State */}
       {loading && <p>Loading...</p>}
 
-      {/* Error State */}
       {error && <p>{error}</p>}
 
-      {/* User Data Display */}
       {userData && !loading && !error && (
         <div>
           <img 
@@ -50,8 +64,15 @@ function Search() {
             alt={userData.name} 
             width="100"
           />
-          <h2>{userData.name || userData.login}</h2>
-          <p>{userData.bio}</p>
+          
+          {userDetails.map((detail, index) => (
+            detail.value && (
+              <div key={index}>
+                <strong>{detail.label}:</strong> {detail.value}
+              </div>
+            )
+          ))}
+          
           <a 
             href={userData.html_url} 
             target="_blank" 
@@ -59,8 +80,6 @@ function Search() {
           >
             View Profile
           </a>
-          <p>Followers: {userData.followers}</p>
-          <p>Following: {userData.following}</p>
         </div>
       )}
     </div>
