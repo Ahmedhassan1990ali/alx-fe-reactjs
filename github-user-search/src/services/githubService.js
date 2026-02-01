@@ -23,7 +23,6 @@ export const searchUsers = async (username, location, minRepos) => {
       query += ` repos:>${minRepos}`;
     }
     
-    console.log("Searching for:", query); // Debug log
     
     const response = await axios.get(
       `https://api.github.com/search/users?q=${encodeURIComponent(query)}&per_page=5`,
@@ -36,7 +35,6 @@ export const searchUsers = async (username, location, minRepos) => {
     
     return response.data;
   } catch (error) {
-    console.error("GitHub API Error:", error.response?.data || error.message);
     throw error;
   }
 };
