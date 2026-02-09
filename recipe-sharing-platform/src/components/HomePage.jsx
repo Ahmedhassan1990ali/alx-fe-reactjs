@@ -12,6 +12,10 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-4">
       <h1 className="text-3xl font-bold text-center my-6">Recipe Sharing Platform</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Recipes</h1>
+        <Link to="/add-recipe" className="bg-green-500 text-white px-4 py-2 rounded">+ Add Recipe</Link>
+      </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {recipes.map(recipe => (
