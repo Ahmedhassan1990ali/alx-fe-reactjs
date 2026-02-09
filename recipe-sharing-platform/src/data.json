@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "Italian pasta with eggs and bacon.",
+    "image": "https://picsum.photos/400/300?food=1"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka",
+    "summary": "Grilled chicken in creamy tomato sauce.",
+    "image": "https://picsum.photos/400/300?food=2"
+  },
+  {
+    "id": 3,
+    "title": "Avocado Toast",
+    "summary": "Simple breakfast with avocado.",
+    "image": "https://picsum.photos/400/300?food=3"
+  },
+  {
+    "id": 4,
+    "title": "Chocolate Cookies",
+    "summary": "Homemade cookies with chocolate chips.",
+    "image": "https://picsum.photos/400/300?food=4"
+  }
+]
